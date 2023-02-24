@@ -1,12 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using System.Threading;
 
 namespace SeleniumFramework
 {
-    internal class Driver
+    public class Driver
     {
+        private static ThreadLocal<IWebDriver> driver = new ThreadLocal<IWebDriver>();
+
+        public static void SetupDriver()
+        {
+            ChromeOptions options = new ChromeOptions();
+            driver.Value = new ChromeDriver(options);
+        }
+
+        public static IWebDriver GetDriver()
+        {
+            return driver.Value;
+        }
+
+        public static void OpenUrl(string url)
+        {
+            driver.Value.Url = url;
+        }
+
+        public static void CloseDriver()
+        {
+            driver.Value.Quit();
+        }
     }
 }
