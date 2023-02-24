@@ -1,5 +1,8 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.Extensions;
+using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
+using System;
 
 namespace SeleniumFramework.Pages
 {
@@ -33,6 +36,13 @@ namespace SeleniumFramework.Pages
         private static void ExecuteJavaScript(string script)
         {
             Driver.GetDriver().ExecuteJavaScript(script);
+        }
+
+        internal static void WaitForElementToBeVisible(string locator)
+        {
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
+            wait.PollingInterval = TimeSpan.FromSeconds(10);
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
         }
     }
 }
