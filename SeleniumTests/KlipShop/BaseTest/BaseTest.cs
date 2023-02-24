@@ -15,11 +15,6 @@ namespace SeleniumTests.BaseTests
         [TearDown]
         public void TearDown()
         {
-            /*if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
-            {
-                string fileName = Driver.TakeScreenshot(TestContext.CurrentContext.Test.MethodName);
-                TestContext.AddTestAttachment(fileName);
-            }*/
             Driver.CloseDriver();
         }
     }

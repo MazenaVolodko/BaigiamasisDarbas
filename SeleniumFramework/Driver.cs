@@ -1,32 +1,31 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using System.Threading;
 
 namespace SeleniumFramework
 {
     public class Driver
     {
-        private static ThreadLocal<IWebDriver> driver = new ThreadLocal<IWebDriver>();
+        private static IWebDriver driver;
 
         public static void SetupDriver()
         {
             ChromeOptions options = new ChromeOptions();
-            driver.Value = new ChromeDriver(options);
+            driver = new ChromeDriver(options);
         }
 
         public static IWebDriver GetDriver()
         {
-            return driver.Value;
+            return driver;
         }
 
         public static void OpenUrl(string url)
         {
-            driver.Value.Url = url;
+            driver.Url = url;
         }
 
         public static void CloseDriver()
         {
-            driver.Value.Quit();
+            driver.Quit();
         }
     }
 }

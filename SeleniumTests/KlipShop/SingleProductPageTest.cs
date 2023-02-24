@@ -1,7 +1,9 @@
 ﻿
+using SeleniumTests.BaseTests;
+
 namespace SeleniumTests.KlipShop
 {
-    internal class SingleProductPageTest
+    internal class SingleProductPageTest : BaseTest
     {
 
     }
