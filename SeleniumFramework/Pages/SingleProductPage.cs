@@ -19,9 +19,19 @@ namespace SeleniumFramework.Pages
             Common.ClickElement(locator);
         }
 
+        public static void ScrollToOutOfStockBoxVisible()
+        {
+            Common.ScrollBy(0, 150);
+        }
+
+        public static void ScrollToTop()
+        {
+            Common.ScrollBy(0, 0);
+        }
+
         public static bool CheckIfOutOfStockBoxExists()
         {
-            string locator = Locators.Text.outOfStockBox;
+            string locator = Locators.Boxes.outOfStockBox;
             try
             {
                 Common.WaitForElementToBeVisible(locator);          
@@ -42,9 +52,22 @@ namespace SeleniumFramework.Pages
 
         }
 
-        public static void ScrollForElementToBeVisible()
+        public static int GetCurrentItemsInCart()
         {
-            Common.ScrollBy(0, 150);
+            string quantity = Common.GetElementText(Locators.Text.cartIconBubbleQuantityText).ToString();
+            return Convert.ToInt32(quantity);
+        }
+
+        public static void ClickAddToCartButton()
+        {
+            Common.ClickElement(Locators.Buttons.addToCartButton);
+        }
+
+        public static void CloseContinueToCartDialog()
+        {
+            string locator = Locators.Buttons.closeContinueShoppingDialogButton;
+            Common.WaitForElementToBeVisible(locator);
+            Common.ClickElement(locator);
         }
     }
 }

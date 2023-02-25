@@ -10,6 +10,7 @@ namespace SeleniumFramework
         public static void SetupDriver()
         {
             ChromeOptions options = new ChromeOptions();
+            options.AddArgument("--start-maximized");
             driver = new ChromeDriver(options);
         }
 
