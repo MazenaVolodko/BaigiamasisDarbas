@@ -17,6 +17,7 @@ namespace SeleniumFramework.Pages
             string locator = Locators.Buttons.acceptCookiesButton;
             Common.WaitForElementToBeVisible(locator);
             Common.ClickElement(locator);
+            Common.WaitUntilElementNotVisible(Locators.Boxes.cookieDialogUnderlay, 10);
         }
 
         public static void ScrollToOutOfStockBoxVisible()

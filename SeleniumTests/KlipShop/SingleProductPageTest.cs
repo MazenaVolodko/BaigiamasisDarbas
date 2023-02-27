@@ -1,5 +1,4 @@
 ﻿
-using System;
 using NUnit.Framework;
 using SeleniumFramework.Pages;
 using SeleniumTests.BaseTests;
