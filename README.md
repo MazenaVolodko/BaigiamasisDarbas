@@ -24,7 +24,7 @@ Testuojama svetainė - https://klipshop.lt
     6. Žingsnis. Esant galimybei produktą įsigyti, spaudžiamas mygtukas "Dėti į krepšelį".
     7. Žingsnis. Uždaromas atsidaręs langas pasirinkimo langas (laukiama, kol bus matomas "Tęsti apsipirkimą" mygtukas,  o jam atsiradus, jis nuspaudžiamas)
     8. Žingsnis. Langas paslenkamas į patį viršų.
-    9. Žingsnis. 
+    9. Žingsnis. Gaunamas šiuo metu krepšelyje esantis produktų skaičius
     
-    **Laukiamas rezultatas:** "Prekės šiuo metu nėra" elementas neatsirado (False).
+    **Laukiamas rezultatas:** Šiuo metu krepšelyje esančių produktų skaičius yra didesnis už prieš tai buvusį produktų skaičių (items after > items before).
         
