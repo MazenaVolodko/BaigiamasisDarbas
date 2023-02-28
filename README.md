@@ -67,7 +67,10 @@ Testuojama svetainė - https://klipshop.lt
     3. Žingsnis. Tikrinama, ar produktą galima pridėti į krepšelį (laukiama, ar atsiras "Prekės šiuo metu nėra" elementas)
     6. Žingsnis. Esant galimybei produktą įsigyti, spaudžiamas mygtukas "Dėti į krepšelį".
     7. Žingsnis. Laukiama, kol atsidariusiame pasirinkimo lange bus matomas "Žiūrėti krepšelį" mygtukas, o jam atsiradus, jis nuspaudžiamas.
+    8. Žingsnis. Laukiama, kol atsiras "Dalintis krepšeliu" mygtukas ir jis nuspaudžiamas
+    9. Žingsnis. Laukiama, kol atsiras "Dalintis" mygtukas.
+    10. Žingsnis. Tikrinama, ar atsirado įvesties laukelis su pirkinių krepšelio nuoroda.
 
     
-    **Laukiamas rezultatas:** Rekomenduojamų produktų skaičius yra daugiau nei 0.
+    **Laukiamas rezultatas:** Laukelis su pirkinių krepšelio nuoroda egzistuoja.
     
