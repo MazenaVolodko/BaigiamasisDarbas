@@ -11,7 +11,6 @@ namespace SeleniumFramework
         {
             ChromeOptions options = new ChromeOptions();
             options.AddArgument("--start-maximized");
-            // options.AddArgument("--headless");
             driver = new ChromeDriver(options);
         }
 
