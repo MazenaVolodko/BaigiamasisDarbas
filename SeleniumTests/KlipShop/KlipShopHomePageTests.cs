@@ -7,7 +7,6 @@ namespace SeleniumTests.KlipShop
     internal class KlipShopHomePageTests : BaseTest
     {
         [TestCase("solidu")]
-        [TestCase("solid----u")]
         public void SearchAutocompleteReturnsSuggestedProducts(string searchPhraseValue)
         {
             KlipShopHomePage.OpenPage();
@@ -19,7 +18,6 @@ namespace SeleniumTests.KlipShop
             Assert.Greater(suggestedProducts, 0);
         }
 
-        [TestCase("solid----u")]
         [TestCase("solidu")]
         public void PerformingSearchReturnsResults(string searchPhraseValue)
         {

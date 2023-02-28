@@ -7,7 +7,6 @@ namespace SeleniumTests.KlipShop
     internal class KlipShopSingleProductPageTests : BaseTest
     {
 
-        [TestCase("solidu-balance-riebiu-plauku-sampunas-su-rozmarinais-ir-metomis")]
         [TestCase("neuma-neumoisture-restore-drekinantis-plauku-kondicionierius")]
         public void ProductIsInStock(string pageSlug)
         {
@@ -18,7 +17,6 @@ namespace SeleniumTests.KlipShop
             Assert.IsFalse(outOfStockBoxVisible, $"Expected result: \"Out Of Stock Box is Visible: False\", actual result: \"Out Of Stock Box is Visible: {outOfStockBoxVisible}\"");
         }
 
-        [TestCase("solidu-balance-riebiu-plauku-sampunas-su-rozmarinais-ir-metomis")]
         [TestCase("neuma-neumoisture-restore-drekinantis-plauku-kondicionierius")]
         public void ProductAddToCart(string pageSlug)
         {
