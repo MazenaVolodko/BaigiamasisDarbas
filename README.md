@@ -55,3 +55,19 @@ Testuojama svetainė - https://klipshop.lt
     
     **Laukiamas rezultatas:** Paieškos rezultatų skaičius yra didesnis už 0.
         
+   
+
+**3. Scenarijus** - Prekių krepšelio dalinimos funkcionalumo tikrinimas. 
+----------
+
+1. Atvejis: **Rodoma prekių krepšelio nuoroda.** 
+    
+    1. Žingsnis: Atidaromas produkto puslapis
+    2. Žingsnis: Sutinkama su "Slapukų dialogo" langu ir laukiama, kol jis dings *(laukiama, kol atsiras "Sutinku" mygtukas; jam atsiradus, jis nuspaudžiamas; laukiama, kol dings lango fono užsklanda)*
+    3. Žingsnis. Tikrinama, ar produktą galima pridėti į krepšelį (laukiama, ar atsiras "Prekės šiuo metu nėra" elementas)
+    6. Žingsnis. Esant galimybei produktą įsigyti, spaudžiamas mygtukas "Dėti į krepšelį".
+    7. Žingsnis. Laukiama, kol atsidariusiame pasirinkimo lange bus matomas "Žiūrėti krepšelį" mygtukas, o jam atsiradus, jis nuspaudžiamas.
+
+    
+    **Laukiamas rezultatas:** Rekomenduojamų produktų skaičius yra daugiau nei 0.
+    
