@@ -49,6 +49,9 @@ Testuojama svetainė - https://klipshop.lt
     1. Žingsnis: Atidaromas produkto puslapis
     2. Žingsnis: Sutinkama su "Slapukų dialogo" langu ir laukiama, kol jis dings *(laukiama, kol atsiras "Sutinku" mygtukas; jam atsiradus, jis nuspaudžiamas; laukiama, kol dings lango fono užsklanda)*
     3. Žingsnis. Į paieškos laukelį įvedama paieškos frazė
+    4. Žingsnis. Spaudžiamas paieškos mygtukas
+    5. Žingsnis. Laukiama, ar atsidarodo paieškos rezultatai
+    6. Žingsnis. Grąžinamas atsiradusių paieškos rezultatų skaičius.
     
-    **Laukiamas rezultatas:** .
+    **Laukiamas rezultatas:** Paieškos rezultatų skaičius yra didesnis už 0.
         
