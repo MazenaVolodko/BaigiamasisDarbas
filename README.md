@@ -5,7 +5,7 @@ Testuojama svetainė - https://klipshop.lt
 **1. Scenarijus** - Produkto puslapio funkcionalumo tikrinimas. 
 ----------
 
-1. Atvejis: *Produktas prieinamas įsigijimui.* 
+1. Atvejis: **Produktas prieinamas įsigijimui.** 
     
     1. Žingsnis: Atidaromas produkto puslapis
     2. Žingsnis: Sutinkama su "Slapukų dialogo" langu ir laukiama, kol jis dings *(laukiama, kol atsiras "Sutinku" mygtukas; jam atsiradus, jis nuspaudžiamas; laukiama, kol dings lango fono užsklanda)*
@@ -15,7 +15,7 @@ Testuojama svetainė - https://klipshop.lt
     **Laukiamas rezultatas:** "Prekės šiuo metu nėra" elementas neatsirado (False).
         
 
-2. Atvejis: *Sėkmingai pridėti produktą į krepšelį.* 
+2. Atvejis: **Sėkmingai pridėti produktą į krepšelį.**
     
     1. Žingsnis: Atidaromas produkto puslapis
     2. Žingsnis: Sutinkama su "Slapukų dialogo" langu ir laukiama, kol jis dings *(laukiama, kol atsiras "Sutinku" mygtukas; jam atsiradus, jis nuspaudžiamas; laukiama, kol dings lango fono užsklanda)*
@@ -33,7 +33,7 @@ Testuojama svetainė - https://klipshop.lt
 **2. Scenarijus** - Paieškos funkcionalumo tikrinimas. 
 ----------
 
-1. Atvejis: *Rodomi rekomenduojami produktai paieškos laukelyje įvedus paieškos frazę.* 
+1. Atvejis: **Rodomi rekomenduojami produktai paieškos laukelyje įvedus paieškos frazę.** 
     
     1. Žingsnis: Atidaromas pradinis puslapis
     2. Žingsnis: Sutinkama su "Slapukų dialogo" langu ir laukiama, kol jis dings *(laukiama, kol atsiras "Sutinku" mygtukas; jam atsiradus, jis nuspaudžiamas; laukiama, kol dings lango fono užsklanda)*
@@ -44,7 +44,7 @@ Testuojama svetainė - https://klipshop.lt
     **Laukiamas rezultatas:** Rekomenduojamų produktų skaičius yra daugiau nei 0.
         
 
-2. Atvejis: *Paieška sėkmingai grąžina rezultatus* 
+2. Atvejis: **Paieška sėkmingai grąžina rezultatus** 
     
     1. Žingsnis: Atidaromas produkto puslapis
     2. Žingsnis: Sutinkama su "Slapukų dialogo" langu ir laukiama, kol jis dings *(laukiama, kol atsiras "Sutinku" mygtukas; jam atsiradus, jis nuspaudžiamas; laukiama, kol dings lango fono užsklanda)*
