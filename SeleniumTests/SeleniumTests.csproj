@@ -49,11 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="KlipShop\BaseTest\BaseTest.cs" />
+    <Compile Include="KlipShop\KlipShopCartPageTests.cs" />
     <Compile Include="KlipShop\KlipShopHomePageTests.cs" />
-    <Compile Include="KlipShop\KlipShopPickPageTest.cs" />
-    <Compile Include="KlipShop\KlipShopSalePageTests.cs" />
-    <Compile Include="KlipShop\KlipShopTop10PageTests.cs" />
-    <Compile Include="KlipShop\SingleProductPageTest.cs" />
+    <Compile Include="KlipShop\KlipShopSingleProductPageTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

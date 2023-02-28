@@ -14,7 +14,10 @@ namespace SeleniumFramework.Pages
             internal static string acceptCookiesButton = "//*[@id='CybotCookiebotDialogBodyButtonAccept']";
             internal static string addToCartButton = "//*[@id='add_to_cart']/button";
             internal static string closeContinueShoppingDialogButton = "//*[@id='layer_cart']//button[contains(@class, 'mfp-close')]";
+            internal static string continueToCartButton = "//*[@id='layer_cart']//a[contains(@class, 'btn-checkout')]";
             internal static string searchButton = "//*[@id='searchbox']//button";
+            internal static string shareCartButton = "//*[@id='submitShareCart']";
+            internal static string shareCartCopyButton = "//*[@id='chareCartCopy']";
         }
         internal class Boxes
         {
@@ -28,6 +31,7 @@ namespace SeleniumFramework.Pages
         internal class Inputs
         {
             internal static string searchInput = "//*[@id='search_query_block']";
+            internal static string shareUrlInput = "//*[@id='shareUrl2']";
         }
     }
 }

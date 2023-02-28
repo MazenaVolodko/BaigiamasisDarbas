@@ -1,11 +1,9 @@
-﻿using OpenQA.Selenium.Support.UI;
-using OpenQA.Selenium;
-using SeleniumExtras.WaitHelpers;
+﻿using OpenQA.Selenium;
 using System;
 
 namespace SeleniumFramework.Pages
 {
-    public class SingleProductPage
+    public static class KlipShopCartPage
     {
         public static void OpenPage(string pageSlug)
         {
@@ -20,23 +18,13 @@ namespace SeleniumFramework.Pages
             Common.WaitUntilElementNotVisible(Locators.Boxes.cookieDialogUnderlay, 10);
         }
 
-        public static void ScrollToOutOfStockBoxVisible()
-        {
-            Common.ScrollBy(0, 150);
-        }
-
-        public static void ScrollToTop()
-        {
-            Common.ScrollBy(0, 0);
-        }
-
         public static bool CheckIfOutOfStockBoxExists()
         {
             string locator = Locators.Boxes.outOfStockBox;
             try
             {
-                Common.WaitForElementToBeVisible(locator);          
-                return  true;
+                Common.WaitForElementToBeVisible(locator);
+                return true;
             }
             catch (WebDriverTimeoutException)
             {
@@ -50,13 +38,6 @@ namespace SeleniumFramework.Pages
             {
                 return false;
             }
-
-        }
-
-        public static int GetCurrentItemsInCart()
-        {
-            string quantity = Common.GetElementText(Locators.Text.cartIconBubbleQuantityText).ToString();
-            return Convert.ToInt32(quantity);
         }
 
         public static void ClickAddToCartButton()
@@ -64,11 +45,28 @@ namespace SeleniumFramework.Pages
             Common.ClickElement(Locators.Buttons.addToCartButton);
         }
 
-        public static void CloseContinueToCartDialog()
+        public static void ClickContinueToCartButton()
         {
-            string locator = Locators.Buttons.closeContinueShoppingDialogButton;
+            string locator = Locators.Buttons.continueToCartButton;
             Common.WaitForElementToBeVisible(locator);
             Common.ClickElement(locator);
         }
+
+        public static void ClickShareCartButton()
+        {
+            Common.ClickElement(Locators.Buttons.shareCartButton);
+        }
+
+        public static void WaitForCopyButtonToAppear()
+        {
+            Common.WaitForElementToBeVisible(Locators.Buttons.shareCartCopyButton);
+        }
+
+        public static bool CheckIfCopyInputIsVisible()
+        {
+            return Common.GetElementText(Locators.Inputs.shareUrlInput) != null;
+        }
+
+
     }
 }

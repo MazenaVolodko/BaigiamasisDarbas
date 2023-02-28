@@ -5,7 +5,6 @@ using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace SeleniumFramework.Pages
@@ -121,5 +120,12 @@ namespace SeleniumFramework.Pages
             actions.MoveToElement(element);
             actions.Perform();
         }
+
+        internal static string GetCssValue(string locator, string propertyName)
+        {
+            return GetElement(locator).GetCssValue(propertyName);
+        }
+
+
     }
 }
