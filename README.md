@@ -6,5 +6,5 @@ Testuojama svetainė - https://klipshop.lt
 
 1. Atvejis:** Produktas prieinamas įsigijimui. 
     
-1. Žingsnis:* Atidaromas produkto puslapis () 
+    1. Žingsnis:* Atidaromas produkto puslapis () 
         
