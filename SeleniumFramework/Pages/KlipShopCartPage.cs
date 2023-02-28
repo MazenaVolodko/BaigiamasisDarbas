@@ -54,6 +54,7 @@ namespace SeleniumFramework.Pages
 
         public static void ClickShareCartButton()
         {
+            Common.WaitForElementToBeVisible(Locators.Buttons.shareCartButton);
             Common.ClickElement(Locators.Buttons.shareCartButton);
         }
 
