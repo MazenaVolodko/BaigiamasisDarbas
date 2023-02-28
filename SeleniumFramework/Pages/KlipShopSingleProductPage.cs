@@ -48,7 +48,6 @@ namespace SeleniumFramework.Pages
             {
                 return false;
             }
-
         }
 
         public static int GetCurrentItemsInCart()

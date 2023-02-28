@@ -1,5 +1,4 @@
-﻿
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using SeleniumFramework.Pages;
 using SeleniumTests.BaseTests;
 
@@ -34,7 +33,6 @@ namespace SeleniumTests.KlipShop
             KlipShopSingleProductPage.ScrollToTop();
             int itemsInCartAfter = KlipShopSingleProductPage.GetCurrentItemsInCart();
             Assert.Greater(itemsInCartAfter, itemsInCartBefore, $"{itemsInCartAfter} {itemsInCartBefore}");
-
         }
 
     }

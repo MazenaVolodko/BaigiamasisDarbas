@@ -67,6 +67,5 @@ namespace SeleniumFramework.Pages
             return Common.GetElementText(Locators.Inputs.shareUrlInput) != null;
         }
 
-
     }
 }

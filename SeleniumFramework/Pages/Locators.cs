@@ -1,6 +1,4 @@
-﻿
-
-namespace SeleniumFramework.Pages
+﻿namespace SeleniumFramework.Pages
 {
     internal class Locators
     {

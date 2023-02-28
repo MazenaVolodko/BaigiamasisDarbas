@@ -1,5 +1,4 @@
-﻿
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using SeleniumFramework.Pages;
 using SeleniumTests.BaseTests;
 
@@ -33,6 +32,5 @@ namespace SeleniumTests.KlipShop
             int foundProductsAmount = KlipShopHomePage.GetAmountOfLoadedElements();
             Assert.Greater(foundProductsAmount, 0, "Search did not return any results");
         }
-
     }
 }

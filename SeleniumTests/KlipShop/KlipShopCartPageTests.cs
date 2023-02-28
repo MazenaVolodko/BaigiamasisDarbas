@@ -1,7 +1,6 @@
 ﻿using NUnit.Framework;
 using SeleniumFramework.Pages;
 using SeleniumTests.BaseTests;
-using System.Security.AccessControl;
 
 namespace SeleniumTests.KlipShop
 {

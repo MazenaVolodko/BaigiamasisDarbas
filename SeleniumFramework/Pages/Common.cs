@@ -16,15 +16,11 @@ namespace SeleniumFramework.Pages
         {
             return Driver.GetDriver().FindElement(By.XPath(locator));
         }
-
         
-
         public static IWebElement GetSingleElement(string locator)
         {
             return Driver.GetDriver().FindElement(By.XPath(locator));
         }
-
-
 
         private static List<IWebElement> GetElementsList(string locator)
         {
@@ -47,8 +43,6 @@ namespace SeleniumFramework.Pages
             IWebElement element = GetElement(locator);
             return new SelectElement(element);
         }
-
-
 
         internal static void SelectOptionByValue(string locator, string value)
         {
@@ -125,7 +119,6 @@ namespace SeleniumFramework.Pages
         {
             return GetElement(locator).GetCssValue(propertyName);
         }
-
 
     }
 }
