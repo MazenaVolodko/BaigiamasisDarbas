@@ -12,7 +12,7 @@ namespace SeleniumTests.KlipShop
         {
             KlipShopSingleProductPage.OpenPage(pageSlug);
             KlipShopCommon.BypassAcceptCookiesDialog();
-            KlipShopSingleProductPage.ScrollToOutOfStockBoxVisible();
+            //KlipShopSingleProductPage.ScrollToOutOfStockBoxVisible();
             bool outOfStockBoxVisible = KlipShopSingleProductPage.CheckIfOutOfStockBoxExists();
             Assert.IsFalse(outOfStockBoxVisible, $"Expected result: \"Out Of Stock Box is Visible: False\", actual result: \"Out Of Stock Box is Visible: {outOfStockBoxVisible}\"");
         }

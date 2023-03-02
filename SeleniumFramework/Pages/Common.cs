@@ -76,5 +76,10 @@ namespace SeleniumFramework.Pages
             new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(timeoutInSeconds))
                             .Until(drv => !IsElementVisible(locator));
         }
+
+        internal static bool CheckIfElementIsVisible(string locator)
+        {
+            return GetElement(locator).Displayed;
+        }
     }
 }
