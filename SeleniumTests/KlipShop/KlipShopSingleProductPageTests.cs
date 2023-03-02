@@ -12,7 +12,6 @@ namespace SeleniumTests.KlipShop
         {
             KlipShopSingleProductPage.OpenPage(pageSlug);
             KlipShopCommon.BypassAcceptCookiesDialog();
-            //KlipShopSingleProductPage.ScrollToOutOfStockBoxVisible();
             bool outOfStockBoxVisible = KlipShopSingleProductPage.CheckIfOutOfStockBoxExists();
             Assert.IsFalse(outOfStockBoxVisible, $"Expected result: \"Out Of Stock Box is Visible: False\", actual result: \"Out Of Stock Box is Visible: {outOfStockBoxVisible}\"");
         }
@@ -23,7 +22,6 @@ namespace SeleniumTests.KlipShop
             KlipShopSingleProductPage.OpenPage(pageSlug);
             KlipShopCommon.BypassAcceptCookiesDialog();
             int itemsInCartBefore = KlipShopSingleProductPage.GetCurrentItemsInCart();
-            KlipShopSingleProductPage.ScrollToOutOfStockBoxVisible();
             bool outOfStockBoxVisible = KlipShopSingleProductPage.CheckIfOutOfStockBoxExists();
             Assert.IsFalse(outOfStockBoxVisible, $"Failed To Add Product To Cart. Product is Out Of Stock.");
             KlipShopSingleProductPage.ClickAddToCartButton();
