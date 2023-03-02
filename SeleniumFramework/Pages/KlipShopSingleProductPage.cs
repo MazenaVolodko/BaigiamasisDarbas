@@ -57,6 +57,7 @@ namespace SeleniumFramework.Pages
 
         public static void ClickAddToCartButton()
         {
+            Common.WaitForElementToBeClickable(Locators.Buttons.addToCartButton);
             Common.ClickElement(Locators.Buttons.addToCartButton);
         }
 
