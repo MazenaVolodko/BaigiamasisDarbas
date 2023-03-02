@@ -11,7 +11,7 @@ namespace SeleniumTests.KlipShop
         public void ProductIsInStock(string pageSlug)
         {
             KlipShopSingleProductPage.OpenPage(pageSlug);
-            KlipShopCommon.BypassAcceptCookiesDialog();
+            
             bool outOfStockBoxVisible = KlipShopSingleProductPage.CheckIfOutOfStockBoxExists();
             Assert.IsFalse(outOfStockBoxVisible, $"Expected result: \"Out Of Stock Box is Visible: False\", actual result: \"Out Of Stock Box is Visible: {outOfStockBoxVisible}\"");
         }
