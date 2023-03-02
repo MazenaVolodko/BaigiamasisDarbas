@@ -11,13 +11,7 @@ namespace SeleniumFramework.Pages
 {
     internal class Common
     {
-
         private static IWebElement GetElement(string locator)
-        {
-            return Driver.GetDriver().FindElement(By.XPath(locator));
-        }
-        
-        public static IWebElement GetSingleElement(string locator)
         {
             return Driver.GetDriver().FindElement(By.XPath(locator));
         }
@@ -44,12 +38,6 @@ namespace SeleniumFramework.Pages
             return new SelectElement(element);
         }
 
-        internal static void SelectOptionByValue(string locator, string value)
-        {
-            SelectElement selectElement = GetSelectElement(locator);
-            selectElement.SelectByValue(value);
-        }
-
         internal static string GetElementText(string locator)
         {
             return GetElement(locator).Text;
@@ -68,11 +56,6 @@ namespace SeleniumFramework.Pages
         private static void ExecuteJavaScript(string script)
         {
             Driver.GetDriver().ExecuteJavaScript(script);
-        }
-
-        public static void ExecuteJavaScriptOnElement(string script, IWebElement element)
-        {
-            Driver.GetDriver().ExecuteJavaScript(script, element);
         }
 
         private static bool IsElementVisible(string locator)
@@ -100,25 +83,5 @@ namespace SeleniumFramework.Pages
             new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(timeoutInSeconds))
                             .Until(drv => !IsElementVisible(locator));
         }
-
-        internal static void Wait(int seconds)
-        {
-            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(seconds));
-
-        }
-
-        internal static void MoveMouseToElement(IWebElement element)
-        {
-            Actions actions = new Actions(Driver.GetDriver());
-
-            actions.MoveToElement(element);
-            actions.Perform();
-        }
-
-        internal static string GetCssValue(string locator, string propertyName)
-        {
-            return GetElement(locator).GetCssValue(propertyName);
-        }
-
     }
 }
