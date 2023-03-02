@@ -30,17 +30,16 @@ namespace SeleniumFramework.Pages
                 Common.WaitForElementToBeVisible(locator);          
                 return  true;
             }
-            catch (WebDriverTimeoutException)
+            catch (Exception ex)
             {
-                return false;
-            }
-            catch (NoSuchElementException)
-            {
-                return false;
-            }
-            catch (TimeoutException)
-            {
-                return false;
+                if (ex is WebDriverTimeoutException || ex is NoSuchElementException || ex is TimeoutException)
+                {
+                    return false;
+                }
+                else
+                {
+                    throw ex;
+                }
             }
         }
 
