@@ -8,36 +8,7 @@ namespace SeleniumFramework.Pages
         public static void OpenPage(string pageSlug)
         {
             Driver.OpenUrl($"https://klipshop.lt/{pageSlug}");
-        }
-
-        public static void BypassAcceptCookiesDialog()
-        {
-            string locator = Locators.Buttons.acceptCookiesButton;
-            Common.WaitForElementToBeVisible(locator);
-            Common.ClickElement(locator);
-            Common.WaitUntilElementNotVisible(Locators.Boxes.cookieDialogUnderlay, 10);
-        }
-
-        public static bool CheckIfOutOfStockBoxExists()
-        {
-            string locator = Locators.Boxes.outOfStockBox;
-            try
-            {
-                Common.WaitForElementToBeVisible(locator);
-                return true;
-            }
-            catch (WebDriverTimeoutException)
-            {
-                return false;
-            }
-            catch (NoSuchElementException)
-            {
-                return false;
-            }
-            catch (TimeoutException)
-            {
-                return false;
-            }
+            KlipShopCommon.BypassAcceptCookiesDialog();
         }
 
         public static void ClickAddToCartButton()
@@ -56,10 +27,6 @@ namespace SeleniumFramework.Pages
         {
             Common.WaitForElementToBeVisible(Locators.Buttons.shareCartButton);
             Common.ClickElement(Locators.Buttons.shareCartButton);
-        }
-
-        public static void WaitForCopyButtonToAppear()
-        {
             Common.WaitForElementToBeVisible(Locators.Buttons.shareCartCopyButton);
         }
 

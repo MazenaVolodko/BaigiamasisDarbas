@@ -7,14 +7,7 @@ namespace SeleniumFramework.Pages
         public static void OpenPage()
         {
             Driver.OpenUrl($"https://klipshop.lt/");
-        }
-
-        public static void BypassAcceptCookiesDialog()
-        {
-            string locator = Locators.Buttons.acceptCookiesButton;
-            Common.WaitForElementToBeVisible(locator);
-            Common.ClickElement(locator);
-            Common.WaitUntilElementNotVisible(Locators.Boxes.cookieDialogUnderlay, 10);
+            KlipShopCommon.BypassAcceptCookiesDialog();
         }
 
         public static void EnterSearchValue(string searchPhrase)

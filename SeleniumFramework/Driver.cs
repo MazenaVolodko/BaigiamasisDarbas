@@ -11,6 +11,7 @@ namespace SeleniumFramework
         {
             ChromeOptions options = new ChromeOptions();
             options.AddArgument("--start-maximized");
+            options.AddArgument("--disable-notifications");
             driver = new ChromeDriver(options);
         }
 

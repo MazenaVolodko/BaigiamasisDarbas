@@ -1,5 +1,4 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.Extensions;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
@@ -11,13 +10,7 @@ namespace SeleniumFramework.Pages
 {
     internal class Common
     {
-
         private static IWebElement GetElement(string locator)
-        {
-            return Driver.GetDriver().FindElement(By.XPath(locator));
-        }
-        
-        public static IWebElement GetSingleElement(string locator)
         {
             return Driver.GetDriver().FindElement(By.XPath(locator));
         }
@@ -27,7 +20,7 @@ namespace SeleniumFramework.Pages
             return Driver.GetDriver().FindElements(By.XPath(locator)).ToList();
         }
 
-        public static IWebElement[] GetAllElements(string locator)
+        internal static IWebElement[] GetAllElements(string locator)
         {
             List<IWebElement> elementList = GetElementsList(locator).ToList();
             return elementList.ToArray();
@@ -36,18 +29,6 @@ namespace SeleniumFramework.Pages
         internal static void ClickElement(string locator)
         {
             GetElement(locator).Click();
-        }
-
-        private static SelectElement GetSelectElement(string locator)
-        {
-            IWebElement element = GetElement(locator);
-            return new SelectElement(element);
-        }
-
-        internal static void SelectOptionByValue(string locator, string value)
-        {
-            SelectElement selectElement = GetSelectElement(locator);
-            selectElement.SelectByValue(value);
         }
 
         internal static string GetElementText(string locator)
@@ -70,11 +51,6 @@ namespace SeleniumFramework.Pages
             Driver.GetDriver().ExecuteJavaScript(script);
         }
 
-        public static void ExecuteJavaScriptOnElement(string script, IWebElement element)
-        {
-            Driver.GetDriver().ExecuteJavaScript(script, element);
-        }
-
         private static bool IsElementVisible(string locator)
         {
             try
@@ -91,34 +67,25 @@ namespace SeleniumFramework.Pages
         internal static void WaitForElementToBeVisible(string locator)
         {
             WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
-            wait.PollingInterval = TimeSpan.FromSeconds(10);
+            //wait.PollingInterval = TimeSpan.FromSeconds(10);
             wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
         }
 
-        internal static void WaitUntilElementNotVisible(string locator, int timeoutInSeconds)
+        internal static void WaitForElementToBeNotVisisble(string locator)
         {
-            new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(timeoutInSeconds))
-                            .Until(drv => !IsElementVisible(locator));
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
+            wait.Until(ExpectedConditions.InvisibilityOfElementLocated(By.XPath(locator)));
         }
 
-        internal static void Wait(int seconds)
+        internal static bool CheckIfElementIsVisible(string locator)
         {
-            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(seconds));
-
+            return GetElement(locator).Displayed;
         }
 
-        internal static void MoveMouseToElement(IWebElement element)
+        internal static void WaitForElementToBeClickable(string locator)
         {
-            Actions actions = new Actions(Driver.GetDriver());
-
-            actions.MoveToElement(element);
-            actions.Perform();
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
         }
-
-        internal static string GetCssValue(string locator, string propertyName)
-        {
-            return GetElement(locator).GetCssValue(propertyName);
-        }
-
     }
 }

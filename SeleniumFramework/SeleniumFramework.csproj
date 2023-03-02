@@ -57,6 +57,7 @@
     <Compile Include="Driver.cs" />
     <Compile Include="Pages\Common.cs" />
     <Compile Include="Pages\KlipShopCartPage.cs" />
+    <Compile Include="Pages\KlipShopCommon.cs" />
     <Compile Include="Pages\KlipShopHomePage.cs" />
     <Compile Include="Pages\Locators.cs" />
     <Compile Include="Pages\KlipShopSingleProductPage.cs" />

@@ -8,14 +8,7 @@ namespace SeleniumFramework.Pages
         public static void OpenPage(string pageSlug)
         {
             Driver.OpenUrl($"https://klipshop.lt/{pageSlug}");
-        }
-
-        public static void BypassAcceptCookiesDialog()
-        {
-            string locator = Locators.Buttons.acceptCookiesButton;
-            Common.WaitForElementToBeVisible(locator);
-            Common.ClickElement(locator);
-            Common.WaitUntilElementNotVisible(Locators.Boxes.cookieDialogUnderlay, 10);
+            KlipShopCommon.BypassAcceptCookiesDialog();
         }
 
         public static void ScrollToOutOfStockBoxVisible()
@@ -25,29 +18,9 @@ namespace SeleniumFramework.Pages
 
         public static void ScrollToTop()
         {
+            // Šitas veiksmas nieko nedaro :)
+            // Scrollinam per nei kiek pikselių abiem kryptim
             Common.ScrollBy(0, 0);
-        }
-
-        public static bool CheckIfOutOfStockBoxExists()
-        {
-            string locator = Locators.Boxes.outOfStockBox;
-            try
-            {
-                Common.WaitForElementToBeVisible(locator);          
-                return  true;
-            }
-            catch (WebDriverTimeoutException)
-            {
-                return false;
-            }
-            catch (NoSuchElementException)
-            {
-                return false;
-            }
-            catch (TimeoutException)
-            {
-                return false;
-            }
         }
 
         public static int GetCurrentItemsInCart()
@@ -58,6 +31,7 @@ namespace SeleniumFramework.Pages
 
         public static void ClickAddToCartButton()
         {
+            Common.WaitForElementToBeClickable(Locators.Buttons.addToCartButton);
             Common.ClickElement(Locators.Buttons.addToCartButton);
         }
 
