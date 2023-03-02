@@ -11,28 +11,6 @@ namespace SeleniumFramework.Pages
             KlipShopCommon.BypassAcceptCookiesDialog();
         }
 
-        public static bool CheckIfOutOfStockBoxExists()
-        {
-            string locator = Locators.Boxes.outOfStockBox;
-            try
-            {
-                Common.WaitForElementToBeVisible(locator);
-                return true;
-            }
-            catch (WebDriverTimeoutException)
-            {
-                return false;
-            }
-            catch (NoSuchElementException)
-            {
-                return false;
-            }
-            catch (TimeoutException)
-            {
-                return false;
-            }
-        }
-
         public static void ClickAddToCartButton()
         {
             Common.ClickElement(Locators.Buttons.addToCartButton);

@@ -12,7 +12,7 @@ namespace SeleniumTests.KlipShop
         {
             KlipShopSingleProductPage.OpenPage(pageSlug);
             
-            bool outOfStockBoxVisible = KlipShopSingleProductPage.CheckIfOutOfStockBoxExists();
+            bool outOfStockBoxVisible = KlipShopCommon.CheckIfOutOfStockBoxExists();
             Assert.IsFalse(outOfStockBoxVisible, $"Expected result: \"Out Of Stock Box is Visible: False\", actual result: \"Out Of Stock Box is Visible: {outOfStockBoxVisible}\"");
         }
 
@@ -21,7 +21,7 @@ namespace SeleniumTests.KlipShop
         {
             KlipShopSingleProductPage.OpenPage(pageSlug);
 
-            bool outOfStockBoxVisible = KlipShopSingleProductPage.CheckIfOutOfStockBoxExists();
+            bool outOfStockBoxVisible = KlipShopCommon.CheckIfOutOfStockBoxExists();
             Assert.IsFalse(outOfStockBoxVisible, $"Failed To Add Product To Cart. Product is Out Of Stock.");
 
             KlipShopSingleProductPage.ClickAddToCartButton();
