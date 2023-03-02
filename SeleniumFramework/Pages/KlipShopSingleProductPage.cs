@@ -22,6 +22,9 @@ namespace SeleniumFramework.Pages
             Common.ScrollBy(0, 0);
         }
 
+        // Labai prastas būdas tikrinti ar elementas neegzistuoja
+        // Ar yra priežastis dėl ko specifiškai taip tikrinate ar tiesiog kitaip neišėjo?
+        // Blogai yra gaudyti WebDriverTimeoutException ir TimeoutException
         public static bool CheckIfOutOfStockBoxExists()
         {
             string locator = Locators.Boxes.outOfStockBox;
