@@ -10,7 +10,7 @@ namespace SeleniumTests.KlipShop
         public void SearchAutocompleteReturnsSuggestedProducts(string searchPhraseValue)
         {
             KlipShopHomePage.OpenPage();
-            KlipShopHomePage.BypassAcceptCookiesDialog();
+            KlipShopCommon.BypassAcceptCookiesDialog();
             KlipShopHomePage.EnterSearchValue(searchPhraseValue);
             bool autocompleteSuggestionBoxAppeared = KlipShopHomePage.CheckIfProductSuggestionsBoxAppeared();
             Assert.IsTrue(autocompleteSuggestionBoxAppeared, "Product suggestions box did not appear");
@@ -22,7 +22,7 @@ namespace SeleniumTests.KlipShop
         public void PerformingSearchReturnsResults(string searchPhraseValue)
         {
             KlipShopHomePage.OpenPage();
-            KlipShopHomePage.BypassAcceptCookiesDialog();
+            KlipShopCommon.BypassAcceptCookiesDialog();
             KlipShopHomePage.EnterSearchValue(searchPhraseValue);
             KlipShopHomePage.PressEnterKey();
             bool searchResultsLoaded = KlipShopHomePage.CheckIfSearchResultsLoaded();

@@ -10,14 +10,6 @@ namespace SeleniumFramework.Pages
             Driver.OpenUrl($"https://klipshop.lt/{pageSlug}");
         }
 
-        public static void BypassAcceptCookiesDialog()
-        {
-            string locator = Locators.Buttons.acceptCookiesButton;
-            Common.WaitForElementToBeVisible(locator);
-            Common.ClickElement(locator);
-            Common.WaitUntilElementNotVisible(Locators.Boxes.cookieDialogUnderlay, 10);
-        }
-
         public static bool CheckIfOutOfStockBoxExists()
         {
             string locator = Locators.Boxes.outOfStockBox;

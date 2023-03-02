@@ -10,7 +10,7 @@ namespace SeleniumTests.KlipShop
         public void CanCopyShareCartLink(string pageSlug)
         {
             KlipShopCartPage.OpenPage(pageSlug);
-            KlipShopCartPage.BypassAcceptCookiesDialog();
+            KlipShopCommon.BypassAcceptCookiesDialog();
             bool outOfStockBoxVisible = KlipShopCartPage.CheckIfOutOfStockBoxExists();
             Assert.IsFalse(outOfStockBoxVisible, $"Could not open cart page because product could not be added to cart");
             KlipShopCartPage.ClickAddToCartButton();
