@@ -1,5 +1,4 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.Extensions;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
@@ -21,7 +20,7 @@ namespace SeleniumFramework.Pages
             return Driver.GetDriver().FindElements(By.XPath(locator)).ToList();
         }
 
-        public static IWebElement[] GetAllElements(string locator)
+        internal static IWebElement[] GetAllElements(string locator)
         {
             List<IWebElement> elementList = GetElementsList(locator).ToList();
             return elementList.ToArray();
@@ -30,12 +29,6 @@ namespace SeleniumFramework.Pages
         internal static void ClickElement(string locator)
         {
             GetElement(locator).Click();
-        }
-
-        private static SelectElement GetSelectElement(string locator)
-        {
-            IWebElement element = GetElement(locator);
-            return new SelectElement(element);
         }
 
         internal static string GetElementText(string locator)
