@@ -8,6 +8,7 @@ namespace SeleniumFramework.Pages
         public static void OpenPage(string pageSlug)
         {
             Driver.OpenUrl($"https://klipshop.lt/{pageSlug}");
+            KlipShopCommon.BypassAcceptCookiesDialog();
         }
 
         public static bool CheckIfOutOfStockBoxExists()
@@ -48,10 +49,6 @@ namespace SeleniumFramework.Pages
         {
             Common.WaitForElementToBeVisible(Locators.Buttons.shareCartButton);
             Common.ClickElement(Locators.Buttons.shareCartButton);
-        }
-
-        public static void WaitForCopyButtonToAppear()
-        {
             Common.WaitForElementToBeVisible(Locators.Buttons.shareCartCopyButton);
         }
 
