@@ -71,10 +71,10 @@ namespace SeleniumFramework.Pages
             wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
         }
 
-        internal static void WaitUntilElementNotVisible(string locator, int timeoutInSeconds)
+        internal static void WaitForElementToBeNotVisisble(string locator)
         {
-            new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(timeoutInSeconds))
-                            .Until(drv => !IsElementVisible(locator));
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
+            wait.Until(ExpectedConditions.InvisibilityOfElementLocated(By.XPath(locator)));
         }
 
         internal static bool CheckIfElementIsVisible(string locator)
