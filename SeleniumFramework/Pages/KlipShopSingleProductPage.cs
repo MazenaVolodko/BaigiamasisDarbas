@@ -8,6 +8,7 @@ namespace SeleniumFramework.Pages
         public static void OpenPage(string pageSlug)
         {
             Driver.OpenUrl($"https://klipshop.lt/{pageSlug}");
+            KlipShopCommon.BypassAcceptCookiesDialog();
         }
 
         public static void ScrollToOutOfStockBoxVisible()

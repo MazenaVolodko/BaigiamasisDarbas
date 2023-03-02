@@ -20,15 +20,14 @@ namespace SeleniumTests.KlipShop
         public void ProductAddToCart(string pageSlug)
         {
             KlipShopSingleProductPage.OpenPage(pageSlug);
-            KlipShopCommon.BypassAcceptCookiesDialog();
-            int itemsInCartBefore = KlipShopSingleProductPage.GetCurrentItemsInCart();
+
             bool outOfStockBoxVisible = KlipShopSingleProductPage.CheckIfOutOfStockBoxExists();
             Assert.IsFalse(outOfStockBoxVisible, $"Failed To Add Product To Cart. Product is Out Of Stock.");
+
             KlipShopSingleProductPage.ClickAddToCartButton();
             KlipShopSingleProductPage.CloseContinueToCartDialog();
-            KlipShopSingleProductPage.ScrollToTop();
-            int itemsInCartAfter = KlipShopSingleProductPage.GetCurrentItemsInCart();
-            Assert.Greater(itemsInCartAfter, itemsInCartBefore, $"{itemsInCartAfter} {itemsInCartBefore}");
+            int itemsInCart = KlipShopSingleProductPage.GetCurrentItemsInCart();
+            Assert.AreEqual(1, itemsInCart);
         }
 
     }
