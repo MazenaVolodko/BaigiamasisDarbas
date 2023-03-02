@@ -17,6 +17,8 @@ namespace SeleniumFramework.Pages
 
         public static void ScrollToTop()
         {
+            // Šitas veiksmas nieko nedaro :)
+            // Scrollinam per nei kiek pikselių abiem kryptim
             Common.ScrollBy(0, 0);
         }
 
